@@ -42,7 +42,7 @@ public class Birthday
     	
     	//calls the length function to find the length of the month
     	int monthLength = dateRange(month);
-    	System.out.print("What is the day (1-" + monthLength + ")? ");
+    	System.out.print("What is the day   (1-" + monthLength + ")? ");
     	int day = input.nextInt();
     	
     	//calls the absDate function to find the absolute distance between the days
