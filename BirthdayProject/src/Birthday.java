@@ -70,45 +70,29 @@ public class Birthday
     public static int absDate(int month, int day)
     {
     	//adds the number of days before the month to the day inputed
-    	if(month == 12)
-    		return 334 + day;
-    	else if (month == 11)
-    		return 304 + day;
-    	else if (month == 10)
-    		return 273 + day;
-    	else if (month == 9)
-    		return 243 + day;
-    	else if (month == 8)
-    		return 212 + day;
-    	else if (month == 7)
-    		return 181 + day;
-    	else if (month == 6)
-    		return 151 + day;
-    	else if (month == 5)
-    		return 120 + day;
-    	else if (month == 4)
-    		return 90 + day;
-    	else if (month == 3)
-    		return 59 + day;
-    	else if (month == 2)
-    		return 31 + day;
-    	else
-    		return day;
+    	int num = 0;
+    	for(int i = 1; i < month; i++)
+    		num += dateRange(i);
+    	num += day;
+    	return num;
     }
         
     //prints out the final statement based off days between the two dates
     public static void finalStatement(int today, int bday) 
     {
+    	//new line 
+    	System.out.println();
+    	
     	int distance = bday - today;
     	if(distance < 0)
-    		System.out.println("Your birthday is in " + (365 - today + bday) + " days.");
+    		System.out.println("Your next birthday is in " + (365 - today + bday) + " days.");
     	//special cases
     	else if(distance == 1)
     		System.out.println("Wow, your birthday is tomorrow!");
     	else if(distance == 0)
     		System.out.println("Happy Birthday!");
     	else
-    		System.out.println("Your next birthday is in " + distance + " days."));
+    		System.out.println("Your next birthday is in " + distance + " days.");
     }
 
 }
