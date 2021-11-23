@@ -90,7 +90,7 @@ public class Birthday
     	else if(distance == 1)
     		System.out.println("Wow, your birthday is tomorrow!");
     	else if(distance == 0)
-    		System.out.println("Happy Birthday!");
+    		System.out.println("Happy birthday!");
     	else
     		System.out.println("Your next birthday is in " + distance + " days.");
     }
