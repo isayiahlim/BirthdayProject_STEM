@@ -47,7 +47,7 @@ public class Birthday
     	
     	//calls the absDate function to find the absolute distance between the days
     	int absNum = absDate(month, day);
-    	System.out.println(month + "/" + day + " is the day #" + absNum + " of 365.");
+    	System.out.println(month + "/" + day + " is day #" + absNum + " of 365.");
     	
     	return absNum;
     }
