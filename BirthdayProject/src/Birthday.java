@@ -13,19 +13,19 @@ public class Birthday
 {
     public static void main(String[] args) 
     {
+    	//adds the beginning statement
     	Scanner input = new Scanner(System.in);
     	System.out.println("This program tells you how many days");
     	System.out.println("it will be until your next birthday.");
     	System.out.println();
     	
-    	//gets today's date and prints out the absolute date
+    	//asks for today's date and prints out the absolute date
     	System.out.println("Please enter today's date:");
     	int todaysAbsDate = monthAndDay(input);
-    	
-    	//prints a new line
+   
     	System.out.println();
     	
-    	//gets the birthday and prints out the absolute date
+    	//asks for the birthday and prints out the absolute date
     	System.out.println("Please enter your birthday:");
     	int bDayAbsDate = monthAndDay(input);
     	
@@ -36,7 +36,7 @@ public class Birthday
     //first statement
     public static int monthAndDay(Scanner input)
     {
-
+    	//gets user input for the month and day
     	System.out.print("What is the month (1-12)? "); 
     	int month = input.nextInt();
     	
@@ -52,7 +52,7 @@ public class Birthday
     	return absNum;
     }
     
-    //returns the number of days based off of the month inputed
+    //returns the number of days based off the month inputed
     public static int dateRange(int month)
     {
     	//February has 28 days
@@ -69,7 +69,7 @@ public class Birthday
     //calculates the absolute days of any date
     public static int absDate(int month, int day)
     {
-    	//adds the number of days before the month to the day inputed
+    	//adds the number of days in each month up to the month inputed
     	int num = 0;
     	for(int i = 1; i < month; i++)
     		num += dateRange(i);
@@ -77,13 +77,12 @@ public class Birthday
     	return num;
     }
         
-    //prints out the final statement based off days between the two dates
+    //prints out the final statement based off the number of days between the two dates
     public static void finalStatement(int today, int bday) 
     {
-    	//new line 
     	System.out.println();
-    	
-    	int distance = bday - today;
+    	//gets the distance between the days
+       	int distance = bday - today;
     	if(distance < 0)
     		System.out.println("Your next birthday is in " + (365 - today + bday) + " days.");
     	//special cases
@@ -91,6 +90,7 @@ public class Birthday
     		System.out.println("Wow, your birthday is tomorrow!");
     	else if(distance == 0)
     		System.out.println("Happy birthday!");
+    	//standard case
     	else
     		System.out.println("Your next birthday is in " + distance + " days.");
     }
